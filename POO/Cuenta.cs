@@ -8,15 +8,15 @@ namespace POO
 {
     public abstract class Cuenta
     {
-         
+ 
         public string Numero { get; set; }
 
-        public abstract void Retirar(decimal valor);
+        public abstract string Retirar(decimal valor);
 
 
-        public abstract void Consignar(decimal valor);
-        
+        public abstract string Consignar(decimal valor);
 
-       
+     
+
     }
 }

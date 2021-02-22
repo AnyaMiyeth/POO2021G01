@@ -8,21 +8,35 @@ namespace POO
 {
     public class CuentaAhorro : Cuenta
     {
+        public CuentaAhorro(decimal valor)
+        {
+            saldo = valor;
+        }
+
         private decimal saldo;
-       
-        public override void Consignar(decimal valor)
+        public override string Consignar(decimal valor)
         {
-            saldo += valor;
+            if (valor>0)
+            {
+                saldo += valor;
+                return $"Valor Consignado {valor} su saldo es {saldo}";
+            }
+            return $"Valor No Consignado, debe ser superiro a $0";
         }
 
-        public override void Retirar(decimal valor)
+        public override string Retirar(decimal valor)
         {
-            saldo -= valor;
+            if (valor<=saldo)
+            {
+                saldo -= valor;
+                return $"Valor Retirado {valor} su saldo es {saldo}";
+            }
+            return "Saldos Insuficientes";
         }
 
-        public decimal ConsultarSaldo()
+        public string ConsultarSaldo()
         {
-            return saldo;
+            return $"Su saldo es {saldo}";
         }
     }
 }

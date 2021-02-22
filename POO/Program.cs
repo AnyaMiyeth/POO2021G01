@@ -12,13 +12,20 @@ namespace POO
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Uso Cuenta de Ahorro:");
+            CuentaAhorro cuenta = new CuentaAhorro(2000000);
+            Console.WriteLine(cuenta.Consignar(200000));
+            Console.WriteLine(cuenta.Retirar(5000000000));
+            Console.WriteLine(cuenta.Retirar(500000));
+            Console.WriteLine(cuenta.ConsultarSaldo());
 
-            CuentaAhorro cuenta = new CuentaAhorro();
-            cuenta.Consignar(250);
-            Console.WriteLine($"El valor de su saldo es {cuenta.ConsultarSaldo()}");
-            cuenta.Retirar(50);
-            Console.WriteLine($"El valor de su saldo es {cuenta.ConsultarSaldo()}");
-            
+            Console.WriteLine("Uso Cuenta de Corriente");
+            CuentaCorriente cuentaCorriente = new CuentaCorriente(1000000);
+            Console.WriteLine(cuentaCorriente.Consignar(200000));
+            Console.WriteLine(cuentaCorriente.Retirar(5000000000));
+            Console.WriteLine(cuentaCorriente.Retirar(500000));
+            Console.WriteLine(cuentaCorriente.Consignar(500000));
+            Console.WriteLine(cuentaCorriente.ConsultarSaldo());
             Console.ReadKey();
         }
     }
